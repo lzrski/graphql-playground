@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+set -euo pipefail
+
+http POST https://api.github.com/graphql \
+  Authorization:"$(cat data/github-authorization)" \
+  query=@query.graphql

@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+
+set -euo pipefail
+
+scripts/run-query
+
+while inotifywait query.graphql
+do
+  scripts/run-query
+done
