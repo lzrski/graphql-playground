@@ -2,9 +2,9 @@
 
 set -euo pipefail
 
-scripts/run-query
+scripts/run-query ${1}
 
-while inotifywait query.graphql
+while inotifywait ${1}
 do
-  scripts/run-query
+  scripts/run-query ${1}
 done
