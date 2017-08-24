@@ -1,0 +1,24 @@
+query GetTree {
+  repository(name: "blog-content", owner: "lzrski") {
+    branch: ref(
+      qualifiedName: "refs/heads/managing-access-to-private-npm-modules"
+    ) {
+      name
+      target {
+        ... on Commit {
+          tree {
+            entries {
+              name
+              object {
+                ... on Blob {
+                  isBinary
+                  text
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

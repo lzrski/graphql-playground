@@ -1,0 +1,13 @@
+query GetContent {
+  repository(name: "blog-content", owner: "lzrski") {
+    description
+    url
+    refs(refPrefix: "refs/heads/", first: 20) {
+      totalCount
+      nodes {
+        name
+        prefix
+      }
+    }
+  }
+}
