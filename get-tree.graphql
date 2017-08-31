@@ -1,8 +1,6 @@
-query GetTree {
+query GetTree($branch: String!) {
   repository(name: "blog-content", owner: "lzrski") {
-    branch: ref(
-      qualifiedName: "refs/heads/managing-access-to-private-npm-modules"
-    ) {
+    branch: ref(qualifiedName: $branch) {
       name
       target {
         ... on Commit {

@@ -1,7 +1,13 @@
 #! /usr/bin/env bash
 
-set -euo pipefail
+set -euvxo pipefail
 
-http POST https://api.github.com/graphql \
+echo ${2}
+
+query="${1}"
+variables="${2}"
+
+http --verbose POST https://api.github.com/graphql \
   Authorization:"$(cat data/github-authorization)" \
-  query=@${1}
+  "query=@${query}" \
+  "variables=${variables}"

@@ -2,9 +2,12 @@
 
 set -euo pipefail
 
-scripts/run-query ${1}
+query="${1}"
+variables="${2:-'{}'}"
 
-while inotifywait ${1}
+scripts/run-query "${query}" "${variables}"
+
+while inotifywait "${query}"
 do
-  scripts/run-query ${1}
+  scripts/run-query "${query}" "${variables}"
 done
