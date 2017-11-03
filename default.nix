@@ -3,7 +3,7 @@ with import <nixpkgs> {}; {
     name = "graphql-playground";
     buildInputs = [ inotify-tools httpie ];
     shellHook = ''
-    # Start user's preffered shell
+    # Start user's preferred shell
     exec ${builtins.getEnv "SHELL"}
     '';
   };
