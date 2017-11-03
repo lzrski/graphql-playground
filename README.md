@@ -6,7 +6,7 @@ I'm learning GraphQL. This is my playground. Weee! :D
 
 You need [HTTPie](https://httpie.org/) and inotify. The later is Linux specific, so on OS X you will need to [adjust the develop script](https://stackoverflow.com/questions/1515730/is-there-a-command-like-watch-or-inotifywait-on-the-mac#13807906)
 
-On Linux using Nix just call `nix-shell` in the main directory of this repo:
+On Linux using [Nix](https://nixos.org/nix/) just call `nix-shell` in the main directory of this repo:
 
 ```
 cd graphql-playground
